@@ -1,5 +1,7 @@
 ## 📌 Project: Email Automation with n8n
 
+![Project Screenshot](images/Screenshot (1103).png)
+
 Demonstration of no-code automation using n8n, where contact data from a Google Sheet is read and personalized emails are sent via Gmail SMTP.
 
 
