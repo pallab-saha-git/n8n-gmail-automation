@@ -1,9 +1,19 @@
-## 📌 Project: Email Automation with n8n
+### 📌 Project: Email Automation with n8n
 
 Demonstration of no-code automation using n8n, where contact data from a Google Sheet is read and personalized emails are sent via Gmail SMTP.
 
 <img src="Screenshot (1103).png" alt="Screenshot" width="400"/>
 
+### Objective
+Build an n8n workflow that reads contact data from a Google Sheet and sends a personalized
+email to each person using dynamic variables.
+### Short Description
+The workflow reads data from a Google Sheet and sends personalized emails to each contact
+using their Name, Company, and Custom Message. It starts with a schedule trigger, then
+reads all rows from the sheet, loops through each one using SplitInBatches, and sends a
+custom email using SMTP. I ran n8n locally with Docker and used a static ngrok domain
+so that Google OAuth and webhook URLs work properly. The whole flow was tested and
+successfully sends emails without issues.
 ## 🚀 Workflow Overview
 
 The automation performs the following steps:
@@ -29,17 +39,17 @@ The automation performs the following steps:
 
 ### 📂 Files:
 - `workflow.json` - exported n8n workflow
-- `workflow.png` - screenshot of the workflow
+- `Screenshot (1103).png` - screenshot of the workflow
 - 🔗 View-only sample sheet: [Google Sheet Link](https://docs.google.com/spreadsheets/d/1UcEXq1SiNRUdXt57SeVi1e-5zSgqY2PG5u_09CJzLeM/edit?usp=sharing)
 
 Example template:
 
-####Subject: 
+#### Subject: 
 ```
 Welcome to {{ $json["Company"] }}, {{ $json["Name"] }}!
 ```
 
-####Body:
+#### Body:
 
 ```
 Hi {{ $json["Name"] }},
@@ -90,3 +100,8 @@ docker run -it --rm \
 ```
 
 ** update port if 5678 doesn't work
+
+
+## For Gmail :
+Follow readme while setting up n8n credentials
+
