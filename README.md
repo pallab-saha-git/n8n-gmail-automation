@@ -36,7 +36,7 @@ The automation performs the following steps:
 ### 📂 Files:
 - `workflow.json` - exported n8n workflow
 - `workflow.png` - screenshot of the workflow
-- 🔗 View-only sample sheet: [Google Sheet Link]([https://...](https://docs.google.com/spreadsheets/d/1UcEXq1SiNRUdXt57SeVi1e-5zSgqY2PG5u_09CJzLeM/edit?usp=sharing))
+- 🔗 View-only sample sheet: [Google Sheet Link](https://docs.google.com/spreadsheets/d/1UcEXq1SiNRUdXt57SeVi1e-5zSgqY2PG5u_09CJzLeM/edit?usp=sharing)
 
 Example template:
 
