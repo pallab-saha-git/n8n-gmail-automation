@@ -1,0 +1,167 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1UcEXq1SiNRUdXt57SeVi1e-5zSgqY2PG5u_09CJzLeM",
+          "mode": "list",
+          "cachedResultName": "n8n Assignment ",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1UcEXq1SiNRUdXt57SeVi1e-5zSgqY2PG5u_09CJzLeM/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1UcEXq1SiNRUdXt57SeVi1e-5zSgqY2PG5u_09CJzLeM/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        208,
+        0
+      ],
+      "id": "82ef0ce9-3d65-4c5f-8a0e-96cbcce4975d",
+      "name": "Get row(s) in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "wbCMINByEvHqWqCY",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        416,
+        0
+      ],
+      "id": "05d90b02-1931-4e40-9981-4888b741410a",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "name": "Replace Me",
+      "typeVersion": 1,
+      "position": [
+        624,
+        0
+      ],
+      "id": "de42ef14-f657-4ed2-868d-472deb49306f"
+    },
+    {
+      "parameters": {
+        "fromEmail": "pallabsongeet007@gmail.com",
+        "toEmail": "={{$json[\"Email\"]}}",
+        "subject": "=Welcome to {{ $json[\"Company\"] }}, {{ $json[\"Name\"] }}!",
+        "html": "=<p>Hi {{$json[\"Name\"]}},</p>\n\n<p>We're excited to have you on board at {{$json[\"Company\"]}}.<br>\n{{$json[\"CustomMessage\"]}}</p>\n\n<p>Best regards,<br>\nGigFloww</p>",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        832,
+        0
+      ],
+      "id": "c0ae8f0e-8451-42dc-ac5c-9e2e31f06c0c",
+      "name": "Send email",
+      "webhookId": "0b1912ba-4849-40d1-9a07-451257ae2d90",
+      "credentials": {
+        "smtp": {
+          "id": "T5KQrITHgBw6j9Ri",
+          "name": "SMTP account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        32,
+        0
+      ],
+      "id": "4437ef97-7939-4571-9004-3cce5bb6513b",
+      "name": "Schedule Trigger"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Replace Me",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Replace Me": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Send email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "a9061c0e-60ce-4bec-a914-4ddf35690e3b",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "7581654215780a2afdfb7f861ef045483257734a2f16aa13cbc7fa812077bb00"
+  },
+  "id": "5vRG58QVPAFpMBao",
+  "tags": []
+}
