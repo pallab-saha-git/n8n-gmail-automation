@@ -46,7 +46,7 @@ Hi {{ $json["Name"] }},
 We're excited to have you on board at {{ $json["Company"] }}.
 {{ $json["CustomMessage"] }}
 Best regards,
-GigFloww
+{{ $json["Company"] }}
 ```
 
 ### 🔧 Tech Stack:
