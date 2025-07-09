@@ -63,7 +63,7 @@
         "fromEmail": "pallabsongeet007@gmail.com",
         "toEmail": "={{$json[\"Email\"]}}",
         "subject": "=Welcome to {{ $json[\"Company\"] }}, {{ $json[\"Name\"] }}!",
-        "html": "=<p>Hi {{$json[\"Name\"]}},</p>\n\n<p>We're excited to have you on board at {{$json[\"Company\"]}}.<br>\n{{$json[\"CustomMessage\"]}}</p>\n\n<p>Best regards,<br>\nGigFloww</p>",
+        "html": "=<p>Hi {{$json[\"Name\"]}},</p>\n\n<p>We're excited to have you on board at {{$json[\"Company\"]}}.<br>\n{{$json[\"CustomMessage\"]}}</p>\n\n<p>Best regards,<br>\n{{$json[\"Company\"]}}</p>",
         "options": {}
       },
       "type": "n8n-nodes-base.emailSend",
@@ -157,7 +157,7 @@
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "a9061c0e-60ce-4bec-a914-4ddf35690e3b",
+  "versionId": "47721455-b8ab-4177-ac33-dd481a4a8fdc",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "7581654215780a2afdfb7f861ef045483257734a2f16aa13cbc7fa812077bb00"
