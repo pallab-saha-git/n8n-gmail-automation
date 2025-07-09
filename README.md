@@ -1,16 +1,8 @@
 ## 📌 Project: Email Automation with n8n
 
-![Project Screenshot](images/Screenshot (1103).png)
-
 Demonstration of no-code automation using n8n, where contact data from a Google Sheet is read and personalized emails are sent via Gmail SMTP.
 
-
-### 🔧 Tech Stack:
-- [n8n](https://n8n.io/) – Automation workflow builder
-- [Google Sheets](https://sheets.google.com/) – For storing contact info
-- Gmail SMTP – To send customized emails
-- [Docker](https://www.docker.com/) – To run n8n locally
-- [ngrok](https://ngrok.com/downloads) (static domain) – For exposing local instance securely online
+<img src="Screenshot (1103).png" alt="Screenshot" width="400"/>
 
 ## 🚀 Workflow Overview
 
@@ -56,6 +48,13 @@ We're excited to have you on board at {{ $json["Company"] }}.
 Best regards,
 GigFloww
 ```
+
+### 🔧 Tech Stack:
+- [n8n](https://n8n.io/) – Automation workflow builder
+- [Google Sheets](https://sheets.google.com/) – For storing contact info
+- Gmail SMTP – To send customized emails
+- [Docker](https://www.docker.com/) – To run n8n locally
+- [ngrok](https://ngrok.com/downloads) (static domain) – For exposing local instance securely online
 
 
 ## For ngrok :
